@@ -1,3 +1,5 @@
+require File.expand_path('../../../load_paths', __FILE__)
+
 ENV['PADRINO_ENV'] = 'test'
 PADRINO_ROOT = File.dirname(__FILE__) unless defined? PADRINO_ROOT
 

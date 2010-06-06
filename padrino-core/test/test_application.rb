@@ -1,11 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
+class PadrinoTestApp < Padrino::Application; end
+  
 class TestApplication < Test::Unit::TestCase
   def teardown
     remove_views
   end
-
-  class PadrinoTestApp < Padrino::Application; end
 
   context 'for application functionality' do
 
@@ -16,7 +16,7 @@ class TestApplication < Test::Unit::TestCase
       assert PadrinoTestApp.raise_errors
       assert !PadrinoTestApp.logging
       assert !PadrinoTestApp.sessions
-      assert 'PadrinoTestApp', PadrinoTestApp.app_name
+      assert_equal :padrino_test_app, PadrinoTestApp.app_name
     end
 
     should 'check padrino specific options' do
@@ -24,7 +24,7 @@ class TestApplication < Test::Unit::TestCase
       PadrinoTestApp.send(:setup_application!)
       assert PadrinoTestApp.instance_variable_get(:@_configured)
       assert !PadrinoTestApp.reload?
-      assert 'padrino_test_app', PadrinoTestApp.app_name
+      assert_equal :padrino_test_app, PadrinoTestApp.app_name
       assert 'StandardFormBuilder', PadrinoTestApp.default_builder
       assert !PadrinoTestApp.flash
     end

@@ -7,6 +7,7 @@ gem "activesupport", "<= 2.3.8"
 gem "shoulda", ">= 2.10.3"
 gem "i18n", "0.4.0"
 gem "mail", ">= 2.2.0"
+gem "builder", ">= 2.1.2"
 
 gem "rake",  ">= 0.8.7"
 gem "mocha", ">= 0.9.8"

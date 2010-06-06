@@ -116,7 +116,7 @@ class TestRouting < Test::Unit::TestCase
     get "/c.ru"
     assert_equal 404, status
     get "/d.json"
-    assert 404, status
+    assert_equal 404, status
     get "/d"
     assert_equal "/d.js?foo=bar", body
     get "/d.js"
